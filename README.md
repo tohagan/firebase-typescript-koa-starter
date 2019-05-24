@@ -4,22 +4,22 @@
 
 Fully configured to auto build and deploy.
 
-- Firebase functions: 
+- Firebase functions:
   - Typescript & TSLint,
-  - Jest unit testing, 
-  - KoaJS example, 
-  - Koa CORS, 
+  - Jest unit testing,
+  - KoaJS example,
+  - Koa CORS,
   - Middleware for response times and error handling.
 - Realtime database - Sample rules, Bolt compiler and Typescript converter
 - Firestore database - Sample rules
-- Firebase Hosting 
+- Firebase Hosting
   - Rewrite /api => Firebase functions (currently Firebase has a problem here - yet to fix)
   - Rewrite SPA client side paths to index.html
   - Proxy and CDN caching rules for CSS and Images
-- Deployment: 
+- Deployment:
   - Configured to auto build and deploy your firebase services.
 
-## Node 8 
+## Node 8
 
 At time of writing, [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and [Google Cloud Functions](https://cloud.google.com/functions/docs/) can run on Node v8, with Node 10 still in beta (node v6 has just been deprecated).
 
@@ -29,8 +29,8 @@ Google has additional resources for setting up development for their Node v8 env
 
    - https://cloud.google.com/functions/docs/concepts/nodejs-8-runtime
 
-I'd particularly recommend using a Node Version Manager for yout OS platform:
-- [Mac/Lunix](https://github.com/nvm-sh/nvm)
+I'd particularly recommend using a Node Version Manager for your OS platform:
+- [Mac/Linux](https://github.com/nvm-sh/nvm)
 - [Windows](https://github.com/coreybutler/nvm-windows)
 
 ## Clone this repo
@@ -57,13 +57,13 @@ Sign in to [Firebase Console](https://console.firebase.google.com) and create yo
 
       $ firebase login
 
-Normally you'd then initialise your new Firebase project ... with `firebase init` but please DON'T for this starter kit as it's already confgured for you! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need. You'll likely only want to use one of the database in your final project.
+Normally you'd then initialise your new Firebase project ... with `firebase init` but please DON'T for this starter kit as it's already configured for you! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need. You'll likely only want to use one of the database in your final project.
 
 2. Update `.firebasrc` with your Firebase Project ID  (replace `"typescript-koa-starter"`) to created in Firebase Console.
 
 3. Install NPM dependencies.
 
-     $ cd functions 
+     $ cd functions
      $ npm install
      $ cd ../hosting
      $ npm install
@@ -77,15 +77,15 @@ Normally you'd then initialise your new Firebase project ... with `firebase init
 
 If you've been coding Node/Express apps a while, you might be considering hosting your static files as part of your Koa app, but I'd recommend you instead use the Firebase hosting service. Your static files will then be deployed on Google's global CDN service with automatic SSL enabled. Deployment is also super easy and fast and hosting will be cheaper.
 
-For this starter kit we've also use `hosting/public` folder for our hosted static files. I like keep my client app source code under `public/src`and perform client builds under the `hosting` folder to void cluttering up the top level directory. 
+For this starter kit we've also use `hosting/public` folder for our hosted static files. I like keep my client app source code under `public/src`and perform client builds under the `hosting` folder to void cluttering up the top level directory.
 
-If you're creating web app for a [PWA](https://developers.google.com/web/progressive-web-apps/) or [SPA](https://en.wikipedia.org/wiki/Single-page_application) app for something like [Vue](http://vuejs.org), [React](https://reactjs.org/) or [Angular](https://angular.io/) then you might want to select the build output folder of your client-side framework in `firebase.json` in place of `hosting/publc`.  
+If you're creating web app for a [PWA](https://developers.google.com/web/progressive-web-apps/) or [SPA](https://en.wikipedia.org/wiki/Single-page_application) app for something like [Vue](http://vuejs.org), [React](https://reactjs.org/) or [Angular](https://angular.io/) then you might want to select the build output folder of your client-side framework in `firebase.json` in place of `hosting/publc`.
 
 ## Rewrite Rules
 
 5. Some SPA frameworks offer the option to allow client-side routing URLs that use a standard `/` delimiter instead a `#` to delimit the client-side path but they need server-side support to do this. We've added this rewrite rule in `firebase.json` to ensure that these paths are re-written to index.html.  If you don't want this, you'll need to remove this rule.
 
-6.  
+6.
 
 ## Why KOA? (instead of Express)
 
@@ -248,10 +248,9 @@ export const api = functions.https.onRequest(app.callback() as any);
 
 ```
 
-
-
-
 ## Koa Error Handling
+
+TBC
 
 ## What Now?
 
