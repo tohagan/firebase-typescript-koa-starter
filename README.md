@@ -57,7 +57,7 @@ Sign in to [Firebase Console](https://console.firebase.google.com) and create yo
 
 Normally you'd then initialise your new Firebase project ... with `firebase init` but DON'T do this for this starter kit as you'd overwrite the `firebase.json` file needed by this kit! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need (normally `firebase init` would prompt you for these). You'll likely only want to use one of the databases in your final project. It's OK to use both.
 
-2. Update `.firebasrc` with your Firebase Project ID  (replace `"typescript-koa-starter"`) to created in Firebase Console.
+2. Update `.firebasrc`, replacing `"typescript-koa-starter"` as default project with the Project ID you created in Firebase Console.
 
 3. Install NPM dependencies.
 
