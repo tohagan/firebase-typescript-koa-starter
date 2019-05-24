@@ -1,4 +1,6 @@
-# Unofficial starter kit for Firebase / Typescript / Node / Koa
+# Starter kit for Firebase / Typescript / Node / Koa
+
+WORK IN PROGRESS
 
 ## Features
 
@@ -33,21 +35,22 @@ I'd particularly recommend using a Node Version Manager for your OS platform:
 - [Mac/Linux](https://github.com/nvm-sh/nvm)
 - [Windows](https://github.com/coreybutler/nvm-windows)
 
+# INSTALL
+
 ## Clone this repo
 
       $ git clone https://github.com/tohagan/firebase-typescript-koa-starter.git
 
 ## Setup Firebase SDK and tools
 
-Login to
-
 - Ref: https://firebase.google.com/docs/functions/get-started
 
-      $ npm install -g firebase-tools
-      $ cd functions
-      $ npm install
-      $ cd ../database
-      $ npm install
+       $ npm install -g firebase-tools
+       $ cd functions
+       $ npm install
+       $ cd ../database
+       $ npm install
+       $ cd ..
 
 ## Initialise your project service files.
 
@@ -57,17 +60,17 @@ Sign in to [Firebase Console](https://console.firebase.google.com) and create yo
 
       $ firebase login
 
-Normally you'd then initialise your new Firebase project ... with `firebase init` but please DON'T for this starter kit as it's already configured for you! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need. You'll likely only want to use one of the database in your final project.
+Normally you'd then initialise your new Firebase project ... with `firebase init` but please DON'T for this starter kit as it's already configured for you! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need. You'll likely only want to use one of the databases in your final project.
 
 2. Update `.firebasrc` with your Firebase Project ID  (replace `"typescript-koa-starter"`) to created in Firebase Console.
 
 3. Install NPM dependencies.
 
-     $ cd functions
-     $ npm install
-     $ cd ../hosting
-     $ npm install
-     $ cd ..
+      $ cd functions
+      $ npm install
+      $ cd ../hosting
+      $ npm install
+      $ cd ..
 
 4. You're ready to auto build and deploy!
 
@@ -83,9 +86,13 @@ If you're creating web app for a [PWA](https://developers.google.com/web/progres
 
 ## Rewrite Rules
 
-5. Some SPA frameworks offer the option to allow client-side routing URLs that use a standard `/` delimiter instead a `#` to delimit the client-side path but they need server-side support to do this. We've added this rewrite rule in `firebase.json` to ensure that these paths are re-written to index.html.  If you don't want this, you'll need to remove this rule.
+5. Some SPA frameworks offer the option to allow client-side routing URLs that use a standard `/` delimiter instead a `#` to delimit the client-side path but they need server-side support to do this. We've added this rewrite rule in `firebase.json` to ensure that these paths are re-written to `index.html`.  If you don't want this, you'll need to remove this rule.
 
-6.
+6. In `firebase.json`, we also rewrite all calls to `/api` and `/langs` to matching sample Firebase Functions.
+
+Currently there appears to be a bug in Firebase rewrite rules that fails to remove /api from the path that is sent to the Koa router.  Works fine if you're not using these rewrite rules.
+
+# WHY?
 
 ## Why KOA? (instead of Express)
 
@@ -99,7 +106,7 @@ Koa also boasts a smarter middleware API that allow interception of both *incomi
 
 Adding Typescript ensures you get the best IDE support (smarter intellisense, code refactoring, references, linting) for tools like Visual Studio Code or Web Storm. Strong type checking  reduces your risk of critical server side bugs and security holes. Type checking adds constraints to the expected behaviour of your code so it's a bit like getting additional free unit tests.
 
-The Typescript compiler cross compiles your code to a specific target version of JavaScript.   So if/when the need arises you can switch to an older or later version of Node / JavaScript. Some Firebase features still require Node 6 so having this parachute available may be useful in your project.
+The Typescript compiler cross compiles your code to a specific target version of JavaScript.   So if/when the need arises you can switch to an older or later version of Node / JavaScript. 
 
 # Node 8 and KOA for Firebase Functions
 
@@ -260,5 +267,6 @@ Happy coding!
 
 Tony.
 
+## ACKOWLEDGEMENTS
 
-
+- Folder structure and `/database` code sample from https://github.com/chetbox/place
