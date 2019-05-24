@@ -26,10 +26,12 @@ At time of writing, [Firebase Cloud Functions](https://firebase.google.com/docs/
 The current status of supported languages and versions are [listed here](https://cloud.google.com/functions/docs/concepts/exec).
 
 Google has additional resources for setting up development for their Node v8 environment  ...
+I test locally with the same Node version used by Firebase (currrent 8.15.0). 
+Check their current version here:
 
    - https://cloud.google.com/functions/docs/concepts/nodejs-8-runtime
 
-I'd particularly recommend using a Node Version Manager for your OS platform:
+I'd recommend using a Node Version Manager for your OS platform:
 - [Mac/Linux](https://github.com/nvm-sh/nvm)
 - [Windows](https://github.com/coreybutler/nvm-windows)
 
