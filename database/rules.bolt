@@ -1,0 +1,11 @@
+isSignedIn() { auth != null }
+isOwner() { isSignedIn() && this.owner == auth.uid  }
+
+type User {
+  status: String,
+  owner: String,
+  roles: Map<String, String> | Null,
+}
+
+path /user/{uid} is User {
+}

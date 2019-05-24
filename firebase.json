@@ -1,0 +1,93 @@
+{
+  "storage": {
+    "rules": "storage/storage.rules"
+  },
+  "database": {
+    "rules": "database/.rules.json",
+    "predeploy": [
+      "npm run --prefix database build-json"
+    ]
+  },
+  "firestore": {
+    "rules": "firestore/firestore.rules",
+    "indexes": "firestore/firestore.indexes.json"
+  },
+  "functions": {
+    "predeploy": [
+      "npm run --prefix database build-typescript",
+      "npm run --prefix functions lint",
+      "npm run --prefix functions build"
+    ],
+    "ignore": [
+      "**/.gitignore",
+      "**/node_modules/**",
+      "**/examples/**",
+      "**/fixtures/**",
+      "**/keys/**",
+      "**/src/**",
+      "**/*.spec.*",
+      "**/*.test.*",
+      "**/test-env.*",
+      "**/*.map",
+      "**/tsconfig.json",
+      "**/jest.config.js",
+      "**/tslint.json",
+      "**/doc/**"
+    ]
+  },
+  "hosting": {
+    "predeploy": [
+      "npm run --prefix hosting clean",
+      "npm run --prefix hosting build"
+    ],
+    "public": "hosting/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "api"
+      },
+      {
+        "source": "/langs",
+        "function": "langs"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0, no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3500"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(png|jpg|jpeg|gif|woff|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=14400, s-maxage=14400"
+          }
+        ]
+      }
+    ]
+  }
+}

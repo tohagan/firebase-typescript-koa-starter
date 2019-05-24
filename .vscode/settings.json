@@ -1,0 +1,3 @@
+{
+  "jest.pathToConfig": "functions/jest.config.js"
+}
