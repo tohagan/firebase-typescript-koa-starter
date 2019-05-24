@@ -61,11 +61,13 @@ Normally you'd then initialise your new Firebase project ... with `firebase init
 
 3. Install NPM dependencies.
 
+```
       $ cd functions
       $ npm install
       $ cd ../hosting
       $ npm install
       $ cd ..
+```
 
 4. You're ready to auto build and deploy!
 
