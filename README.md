@@ -1,13 +1,41 @@
-## Unofficial starter kit for Firebase / Typescript / Node 8.x / Koa
+# Unofficial starter kit for Firebase / Typescript / Node 8.x / Koa
 
-At time of writing, [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and [Google Cloud Functions](https://cloud.google.com/functions/docs/) can run on either Node v6, or Node v8, with Node 10 still in beta. The current status of supported languages and versions are [listed here](https://cloud.google.com/functions/docs/concepts/exec).
+## Features
 
+Fully configured to auto build and deploy.
+
+- Firebase functions: 
+  - Typescript & TSLint,
+  - Jest unit testing, 
+  - KoaJS example, 
+  - Koa CORS, 
+  - Middleware for response times and error handling.
+- Realtime database - Sample rules, Bolt compiler and Typescript converter
+- Firestore database - Sample rules
+- Firebase Hosting 
+  - Rewrite /api => Firebase functions (currently Firebase has a problem here - yet to fix)
+  - Rewrite SPA client side paths to index.html
+  - Proxy and CDN caching rules for CSS and Images
+- Deployment: 
+  - Configured to auto build and deploy your firebase services.
+
+## Node 8 
+
+At time of writing, [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and [Google Cloud Functions](https://cloud.google.com/functions/docs/) can run on Node v8, with Node 10 still in beta (node v6 has just been deprecated).
+
+The current status of supported languages and versions are [listed here](https://cloud.google.com/functions/docs/concepts/exec).
 
 Google has additional resources for setting up development for their Node v8 environment  ...
 
    - https://cloud.google.com/functions/docs/concepts/nodejs-8-runtime
 
-I'd particularly recommend using a Node Version Manager for your OS platform.
+I'd particularly recommend using a Node Version Manager for yout OS platform:
+- [Mac/Lunix](https://github.com/nvm-sh/nvm)
+- [Windows](https://github.com/coreybutler/nvm-windows)
+
+## Clone this repo
+
+      $ git clone https://github.com/tohagan/firebase-typescript-koa-starter.git
 
 ## Setup Firebase SDK and tools
 
@@ -23,34 +51,41 @@ Login to
 
 ## Initialise your project service files.
 
-Sign in to [Firebase Console](https://console.firebase.google.com) and create yourself a new project. Select "Database" menu option and provision the database service that you wish to use ("Firestore" or Realtime database (labelled as "Database")).
+Sign in to [Firebase Console](https://console.firebase.google.com) and create yourself a new project and then select "Database" menu option and provision the database service that you wish to use ("Firestore" or "Realtime database" - labelled as "Database").
 
-
-Now login from the command line.
+1. Login from the command line.
 
       $ firebase login
 
-Initialise your new Firebase project ...
+Normally you'd then initialise your new Firebase project ... with `firebase init` but please DON'T for this starter kit as it's already confgured for you! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services.  Review all the service settings in `firebase.json` and remove those you don't need. You'll likely only want to use one of the database in your final project.
 
-      $ firebase init
+2. Update `.firebasrc` with your Firebase Project ID  (replace `"typescript-koa-starter"`) to created in Firebase Console.
 
-1.  Select the services you need for your project.  For this starter, I've selected Firestore, Database, Functions, Hosting and Storage.
+3. Install NPM dependencies.
 
-2. Select the project you created in the console (in this example it's called `typescript-koa-starter`).
+     $ cd functions 
+     $ npm install
+     $ cd ../hosting
+     $ npm install
+     $ cd ..
 
-3. Select defaults for Firestore files
+4. You're ready to auto build and deploy!
 
-4. Select `Typescript` as the project language with TSLint enabled.
-
-5. Agree to install NPM dependencies.
-
-6. For this starter kit we'll use the default `public` folder for our hosted static files. If you're creating a [PWA](https://developers.google.com/web/progressive-web-apps/) or [SPA](https://en.wikipedia.org/wiki/Single-page_application) app for something like [Vue](http://vuejs.org), [React](https://reactjs.org/) or [Angular](https://angular.io/) then you might want to select the build output folder of your client-side framework.
-
-7. Some SPA frameworks offer the option to allow client-side routing URLs that use a standard `/` delimiter instead a `#` to delimit the client-side path but they need server-side support to do this. So if you need this feature, answer `Yes` to "rewrite all urls to `index.html`".
+    $ firebase deploy
 
 ## Static file hosting
 
 If you've been coding Node/Express apps a while, you might be considering hosting your static files as part of your Koa app, but I'd recommend you instead use the Firebase hosting service. Your static files will then be deployed on Google's global CDN service with automatic SSL enabled. Deployment is also super easy and fast and hosting will be cheaper.
+
+For this starter kit we've also use `hosting/public` folder for our hosted static files. I like keep my client app source code under `public/src`and perform client builds under the `hosting` folder to void cluttering up the top level directory. 
+
+If you're creating web app for a [PWA](https://developers.google.com/web/progressive-web-apps/) or [SPA](https://en.wikipedia.org/wiki/Single-page_application) app for something like [Vue](http://vuejs.org), [React](https://reactjs.org/) or [Angular](https://angular.io/) then you might want to select the build output folder of your client-side framework in `firebase.json` in place of `hosting/publc`.  
+
+## Rewrite Rules
+
+5. Some SPA frameworks offer the option to allow client-side routing URLs that use a standard `/` delimiter instead a `#` to delimit the client-side path but they need server-side support to do this. We've added this rewrite rule in `firebase.json` to ensure that these paths are re-written to index.html.  If you don't want this, you'll need to remove this rule.
+
+6.  
 
 ## Why KOA? (instead of Express)
 
