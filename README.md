@@ -45,11 +45,11 @@ Login to
 
 - Ref: https://firebase.google.com/docs/functions/get-started
 
-      $ npm install -g firebase-tools
-      $ cd functions
-      $ npm install
-      $ cd ../database
-      $ npm install
+       $ npm install -g firebase-tools
+       $ cd functions
+       $ npm install
+       $ cd ../database
+       $ npm install
 
 ## Initialise your project service files.
 
