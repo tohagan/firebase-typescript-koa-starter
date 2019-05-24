@@ -50,6 +50,7 @@ I'd particularly recommend using a Node Version Manager for your OS platform:
        $ npm install
        $ cd ../database
        $ npm install
+       $ cd ..
 
 ## Initialise your project service files.
 
