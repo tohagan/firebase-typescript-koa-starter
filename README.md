@@ -1,4 +1,4 @@
-# Unofficial starter kit for Firebase / Typescript / Node 8.x / Koa
+# Unofficial starter kit for Firebase / Typescript / Node / Koa
 
 ## Features
 
