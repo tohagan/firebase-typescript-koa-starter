@@ -35,7 +35,7 @@ I'd particularly recommend using a Node Version Manager for your OS platform:
 - [Mac/Linux](https://github.com/nvm-sh/nvm)
 - [Windows](https://github.com/coreybutler/nvm-windows)
 
-# INSTALL
+## INSTALL
 
 ## Clone this repo
 
