@@ -14,6 +14,8 @@ app.use(cors({
 
 app.use(Middleware.appHeaders);
 app.use(Middleware.errorMapper);
+// app.use(Middleware.fbRewriteFix);
+
 app.on('error', (err, ctx) => {
   console.log(err);
 });
@@ -25,11 +27,9 @@ app.use(apiRouter.allowedMethods());
 
 // "/api" included in hosting rewrite rules.
 export const api = functions
-  // Choose a region other than the default us-central1
-  // .region('europe-west1')
-  // Increased memory, decreased timeout (compared to defaults)
-  // .runWith({ memory: '1GB', timeoutSeconds: 120 })
-  .https.onRequest(app.callback() as any);
+  // .region('europe-west1') // Choose a region other than the default us-central1
+  // .runWith({ memory: '1GB', timeoutSeconds: 120 }) // Increased memory, decreased timeout (compared to defaults)
+  .https.onRequest(app.callback() as any); // Converts a Koa app into a Firebase function
 
 export const langs = functions.https.onRequest((req: any, res: any) => {
   const lang = req.headers['accept-language'] || 'en';
