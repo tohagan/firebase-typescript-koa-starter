@@ -1,4 +1,4 @@
-# Unofficial starter kit for Firebase / Typescript / Node / Koa
+# Starter kit for Firebase / Typescript / Node / Koa
 
 WORK IN PROGRESS
 
@@ -34,6 +34,8 @@ Google has additional resources for setting up development for their Node v8 env
 I'd particularly recommend using a Node Version Manager for your OS platform:
 - [Mac/Linux](https://github.com/nvm-sh/nvm)
 - [Windows](https://github.com/coreybutler/nvm-windows)
+
+# INSTALL
 
 ## Clone this repo
 
@@ -90,6 +92,8 @@ If you're creating web app for a [PWA](https://developers.google.com/web/progres
 6. In `firebase.json`, we also rewrite all calls to `/api` and `/langs` to matching sample Firebase Functions.
 
 Currently there appears to be a bug in Firebase rewrite rules that fails to remove /api from the path that is sent to the Koa router.  Works fine if you're not using these rewrite rules.
+
+# WHY?
 
 ## Why KOA? (instead of Express)
 
