@@ -43,8 +43,6 @@ I'd particularly recommend using a Node Version Manager for your OS platform:
 
 ## Setup Firebase SDK and tools
 
-Login to
-
 - Ref: https://firebase.google.com/docs/functions/get-started
 
        $ npm install -g firebase-tools
