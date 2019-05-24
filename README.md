@@ -4,7 +4,7 @@ WORK IN PROGRESS
 
 ## Features
 
-Fully configured to auto build and deploy.
+Fully configured to auto build and deploy each Firebase service.
 
 - Firebase functions:
   - Typescript & TSLint,
@@ -18,8 +18,6 @@ Fully configured to auto build and deploy.
   - Rewrite /api => Firebase functions (currently Firebase has a problem here - yet to fix)
   - Rewrite SPA client side paths to index.html
   - Proxy and CDN caching rules for CSS and Images
-- Deployment:
-  - Configured to auto build and deploy your firebase services.
 
 ## Node 8
 
