@@ -2,8 +2,7 @@
 
 - [Koa JS](https://koajs.com/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Firebase](https://firebase.google.com/)
-  
+- [Firebase](https://firebase.google.com/) 
 
 ## Features
 
@@ -43,13 +42,13 @@ I'd recommend using a Node Version Manager for your OS platform:
 
 ## Clone this repo
 
-      $ git clone https://github.com/tohagan/firebase-typescript-koa-starter.git
+     $ git clone https://github.com/tohagan/firebase-typescript-koa-starter.git
 
 ## Setup Firebase SDK and tools
 
 - See https://firebase.google.com/docs/functions/get-started
 
-       $ npm install -g firebase-tools
+      $ npm install -g firebase-tools
 
 ## Initialise your project service files.
 
@@ -57,9 +56,9 @@ Sign in to [Firebase Console](https://console.firebase.google.com) and create yo
 
 1. Login from the command line
 
-      $ firebase login
+       $ firebase login
 
-Normally you'd then initialise your new Firebase project ... with `firebase init` but DON'T do this for this starter kit as you'd overwrite the `firebase.json` file needed by this kit! For this starter kit, we've selected Firestore, Database, Functions, Hosting and Storage services. I've not included the new Google Run service. 
+Normally you'd then initialise your new Firebase project ... with `firebase init` but DON'T do this for this starter kit as you'd overwrite the `firebase.json` file needed by this kit! For this starter kit, we've selected Database, Firestore, Functions, Hosting and Storage services. We've not included the new Google Run service. 
 
 Review all the service settings in `firebase.json` and remove those you don't need (normally `firebase init` would prompt you for these). You'll likely only want to use one of the databases in your final project. It's OK to use both.  
 
@@ -67,17 +66,15 @@ Review all the service settings in `firebase.json` and remove those you don't ne
 
 3. Install NPM dependencies for `functions` and `hosting` services.
 
-```
-      $ cd functions
-      $ npm install
-      $ cd ../hosting
-      $ npm install
-      $ cd ..
-```
+       $ cd functions
+       $ npm install
+       $ cd ../hosting
+       $ npm install
+       $ cd ..
 
 4. You're now ready to auto build and deploy!
 
-    $ firebase deploy
+       $ firebase deploy
 
 ## Hosting
 
