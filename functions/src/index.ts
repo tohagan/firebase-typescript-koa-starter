@@ -27,8 +27,8 @@ app.use(apiRouter.allowedMethods());
 
 // "/api" included in hosting rewrite rules.
 export const api = functions
-  // .region('europe-west1') // Choose a region other than the default us-central1
-  // .runWith({ memory: '1GB', timeoutSeconds: 120 }) // Increased memory, decreased timeout (compared to defaults)
+  // .region('europe-west1') // Defaults to 'us-central1'
+  // .runWith({ memory: '1GB', timeoutSeconds: 120 })
   .https.onRequest(app.callback() as any); // Converts a Koa app into a Firebase function
 
 export const langs = functions.https.onRequest((req: any, res: any) => {
