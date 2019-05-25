@@ -100,6 +100,12 @@ Happy coding!
 
 Tony.
 
+## TODO
+
+I've not yet adopted this naming convention for functions but I think it would be very useful:
+
+- [Organizing your Firebase Cloud Functions](https://codeburst.io/organizing-your-firebase-cloud-functions-67dc17b3b0da)
+
 ## ACKOWLEDGEMENTS
 
 - Folder structure and `/database` code sample is from https://github.com/chetbox/place
