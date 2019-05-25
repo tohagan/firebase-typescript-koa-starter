@@ -1,4 +1,4 @@
-# Starter kit for Firebase Functions / Typescript / Node / Koa
+# Starter kit for Firebase Functions / Typescript / KoaJS
 
 - [Koa JS](https://koajs.com/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -58,7 +58,7 @@ Sign in to [Firebase Console](https://console.firebase.google.com) and create yo
 
        $ firebase login
 
-Normally you'd then initialise your new Firebase project ... with `firebase init` but DON'T do this for this starter kit as you'd overwrite the `firebase.json` file needed by this kit! For this starter kit, we've selected Database, Firestore, Functions, Hosting and Storage services. We've not included the new Google Run service. 
+Normally you'd then initialise your new Firebase project with `firebase init` but DON'T do this as you'd overwrite the `firebase.json` file! For this starter kit, we've selected Database, Firestore, Functions, Hosting and Storage services. We've not included the new Google Run service. 
 
 Review all the service settings in `firebase.json` and remove those you don't need (normally `firebase init` would prompt you for these). You'll likely only want to use one of the databases in your final project. It's OK to use both.  
 
@@ -102,4 +102,4 @@ Tony.
 
 ## ACKOWLEDGEMENTS
 
-- Folder structure and `/database` code sample from https://github.com/chetbox/place
+- Folder structure and `/database` code sample is from https://github.com/chetbox/place
