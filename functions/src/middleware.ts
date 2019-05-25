@@ -4,6 +4,15 @@ const pkg = require("../package.json");
 type Ctx = Koa.ParameterizedContext;
 type Next = () => Promise<any>;
 
+// Use to throw an error that reports a HTTP Staus
+export class StatusError extends Error {
+  public status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
+  }
+}
+
 export class Middleware {
 
   // Firebase hosting rewrite rules fail to remove route path prefix
