@@ -1,23 +1,27 @@
-# Starter kit for Firebase / Typescript / Node / Koa
+# Starter kit for Firebase Functions / Typescript / Node / Koa
 
-WORK IN PROGRESS
+- [Koa JS](https://koajs.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/)
+  
 
 ## Features
 
 Fully configured to auto build and deploy each Firebase service.
 
-- Firebase functions:
+- [Firebase Cloud functions](https://firebase.google.com/docs/functions):
   - Typescript & TSLint,
   - Jest unit testing,
   - KoaJS example,
   - Koa CORS,
   - Middleware for response times and error handling.
-- Realtime database - Sample rules, Bolt compiler and Typescript converter
-- Firestore database - Sample rules
-- Firebase Hosting
+- [Realtime database](https://firebase.google.com/docs/database) - Sample rules, Bolt compiler and Typescript converter
+- [Firestore database](https://firebase.google.com/docs/firestore) - Sample rules
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
   - Rewrite /api => Firebase functions (currently Firebase has a problem here - yet to fix)
   - Rewrite SPA client side paths to index.html
   - Proxy and CDN caching rules for CSS and Images
+- [Firebase Storage](https://firebase.google.com/docs/storage) - rule sample.
 
 ## Node 8
 
@@ -93,7 +97,7 @@ Currently there appears to be a bug in Firebase rewrite rules that fails to remo
 
 ## What Now?
 
-Core the KOA library excludes many of the common middleware APIs (like KOA Router) found in Express. This keeps the core library light and thin. Checkout [Awesome Koa](https://github.com/ellerbrock/awesome-koa) for a comprehensive and extensive list of Koa Examples & Tutorials, Middleware libraries and other resources!
+Core the KOA library excludes many of the common middleware APIs (like KOA Router) found in Express. This keeps the core library light and thin. Checkout [Awesome Koa](https://github.com/ellerbrock/awesome-koa) for a comprehensive list of Koa Examples & Tutorials, Middleware libraries and other resources!
 
 Happy coding!
 
