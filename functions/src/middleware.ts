@@ -34,11 +34,11 @@ export class Middleware {
     await next();
     const ms = Date.now() - start;
     // console.log(`${ctx.method} ${ctx.url} - ${ms}`);
-    ctx.set('X-app-version', pkg.version);
-    ctx.set('X-response-time', `${ms}ms`);
-    ctx.set('X-ctx-url', ctx.url || 'Unknown');
-    ctx.set('X-ctx-original-url', ctx.originalUrl || 'Unknown');
-    ctx.set('X-req-url', ctx.req.url || 'Unknown');
+    ctx.set('x-app-version', pkg.version);
+    ctx.set('x-response-time', `${ms}ms`);
+    ctx.set('x-ctx-url', ctx.url || 'Unknown');
+    ctx.set('x-ctx-original-url', ctx.originalUrl || 'Unknown');
+    ctx.set('x-req-url', ctx.req.url || 'Unknown');
   };
 
   public static async errorMapper(ctx: Ctx, next: Next) {
