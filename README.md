@@ -125,7 +125,6 @@ router.get('/langs', async (ctx) => {
   ctx.body = result;  // Send response
 });
 ```
-
 ## Firebase Hosting
 
 Firebase supports hosting static files such as our Web to PWA app that can call our Cloud Functions.
@@ -134,7 +133,6 @@ This hosting service can be configured via the `firebase.json` file with additio
 In our example you can view the web hosted `hosting/public/index.html` file at
 
 - https://typescript-koa-starter.firebaseapp.com/
-
 
 ## Rewrite rules for Cloud Functions
 
@@ -172,7 +170,6 @@ Some PWA/SPA JavaScript frameworks like Vue, React and Angular offer the option 
   }
 
 ```
-
 ## What Now?
 
 Core the KOA library excludes many of the common middleware APIs (like KOA Router) found in Express. This keeps the core library light and thin. Checkout [Awesome Koa](https://github.com/ellerbrock/awesome-koa) for a comprehensive list of Koa Examples & Tutorials, Middleware libraries and other resources!
@@ -185,4 +182,3 @@ Tony.
 
 - Folder structure and `/database` code sample is from https://github.com/chetbox/place
 - [Organizing your Firebase Cloud Functions](https://codeburst.io/organizing-your-firebase-cloud-functions-67dc17b3b0da)
--
