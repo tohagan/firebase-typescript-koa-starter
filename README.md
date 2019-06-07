@@ -94,7 +94,6 @@ export const langs = functions.https.onRequest((req: any, res: any) => {
   res.send(result);  // Send response
 });
 ```
-
 ... you can now call it using `/lang` path such as ...
 
 - https://us-central1-typescript-koa-starter.cloudfunctions.net/langs
@@ -168,7 +167,6 @@ Some PWA/SPA JavaScript frameworks like Vue, React and Angular offer the option 
     "source": "**",
     "destination": "/index.html"
   }
-
 ```
 ## What Now?
 
