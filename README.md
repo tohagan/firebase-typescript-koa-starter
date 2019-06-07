@@ -170,7 +170,7 @@ Some PWA/SPA JavaScript frameworks like Vue, React and Angular offer the option 
 ```
 ## What Now?
 
-Core the KOA library excludes many of the common middleware APIs (like KOA Router) found in Express. This keeps the core library light and thin. Checkout [Awesome Koa](https://github.com/ellerbrock/awesome-koa) for a comprehensive list of Koa Examples & Tutorials, Middleware libraries and other resources!
+The core KOA library excludes many of the common middleware APIs (like KOA Router) found in Express. This keeps the core library light and thin. Checkout [Awesome Koa](https://github.com/ellerbrock/awesome-koa) for a comprehensive list of Koa Examples & Tutorials, Middleware libraries and other resources!
 
 Happy coding!
 
